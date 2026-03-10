@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WhatsApp Web</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#e5ddd5;
+  text-align:center;
+  padding-top:120px;
+}
+
+.box{
+  background:white;
+  width:320px;
+  margin:auto;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.logo{
+  color:#25D366;
+  font-size:32px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+
+ .imag{
+    width: 200px;
+    height: 200px;
+ }
+
+#msg{
+  margin-top:20px;
+  font-size:18px;
+}
+
+.warning{
+  color:red;
+  font-weight:bold;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <div class="logo">WhatsApp Web</div>
+  
+<img src="./photo_2026-03-10_16-34-24.jpg" class="imag" alt="">
+  <div class="qr"></div>
+  <div id="msg">جارٍ ربط الجهاز...</div>
+  <div id="warn" class="warning"></div>
+</div>
+
+<script>
+
+// اهتزاز الموبايل
+setTimeout(function(){
+  if(navigator.vibrate){
+    navigator.vibrate([300,100,300]);
+  }
+},2000);
+
+setTimeout(function(){
+  document.getElementById("msg").innerHTML="تم العثور على جهاز جديد";
+},1000);
+
+setTimeout(function(){
+  document.getElementById("msg").innerHTML="جارٍ مزامنة الرسائل...";
+},2000);
+
+setTimeout(function(){
+  document.getElementById("warn").innerHTML="تنبيه: جهاز غير معروف متصل بالحساب";
+},3000);
+
+</script>
+
+</body>
+</html>
